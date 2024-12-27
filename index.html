@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gem Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4 flex flex-col sm:flex-row justify-center items-center min-h-screen">
+        <div class="bg-white rounded-lg shadow p-4 w-full sm:w-auto">
+            <!-- Tabs -->
+            <div class="mb-4 flex overflow-x-auto border-b">
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-blue-500 text-blue-500" data-tab="speedup">Speed</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="combat">Combat</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="boost">Boost</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="resources">Resources</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="chests">Chests</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="buildings">Buildings</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="familiar">Familiar</button>
+                <button class="tab-btn px-4 py-2 -mb-px border-b-2 border-transparent hover:border-blue-500 text-gray-600" data-tab="monsterhunt">Monster</button>
+            </div>
+
+            <!-- Content -->
+            <div id="tab-contents">
+                <!-- Tab Content - Speed Up -->
+                <div class="tab-content" id="speedup">
+                    <table class="w-full table-auto border-collapse">
+                        <thead>
+                            <tr class="bg-gray-200 text-left">
+                                <th class="w-1/10 p-2"></th>
+                                <th class="w-7/10 p-2">Name</th>
+                                <th class="w-1/10 p-2">Price (Gems)</th>
+                                <th class="w-1/10 p-2 text-center">Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s60m.png?ssl=1" alt="Speed 60 minutes"></td>
+                                <td class="p-2">Speed 60 minutes</td>
+                                <td class="p-2">100</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 60 minutes" data-price="130" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s3h.png?ssl=1" alt="Speed 3 Hours"></td>
+                                <td class="p-2">Speed 3 Hours</td>
+                                <td class="p-2">300</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 3 Hours" data-price="300" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s8h.png?ssl=1" alt="Speed 8 Hours"></td>
+                                <td class="p-2">Speed 8 Hours</td>
+                                <td class="p-2">650</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 8 Hours" data-price="650" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s15h.png?ssl=1" alt="Speed 15 Hours"></td>
+                                <td class="p-2">Speed 15 Hours</td>
+                                <td class="p-2">650</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 15 Hours" data-price="1000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s24h.png?ssl=1" alt="Speed 24 Hours"></td>
+                                <td class="p-2">Speed 24 Hours</td>
+                                <td class="p-2">1,500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 24 Hours" data-price="1500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s3d.png?ssl=1" alt="Speed 3 Days"></td>
+                                <td class="p-2">Speed 3 Days</td>
+                                <td class="p-2">4,400</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 3 Days" data-price="4400" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s7d.png?ssl=1" alt="Speed 7 Days"></td>
+                                <td class="p-2">Speed 7 Days</td>
+                                <td class="p-2">10,000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 7 Days" data-price="10000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/s30d.png?ssl=1" alt="Speed 30 Days"></td>
+                                <td class="p-2">Speed 30 Days</td>
+                                <td class="p-2">40,000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Speed 30 Days" data-price="40000" min="0" value="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tab Content - Combat -->
+                <div class="tab-content" id="combat">
+                    <table class="w-full table-auto border-collapse">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="w-1/10 p-2"></th>
+                                <th class="w-7/10 p-2">Name</th>
+                                <th class="w-1/10 p-2">Price</th>
+                                <th class="w-1/10 p-2">Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/braveheart.png?ssl=1" alt="Braveheart"></td>
+                                <td class="p-2">Braveheart</td>
+                                <td class="p-2">2,000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Braveheart" data-price="2000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/rrelo.png?ssl=1" alt="Random Relocator"></td>
+                                <td class="p-2">Random Relocator</td>
+                                <td class="p-2">500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Random Relocator" data-price="500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/relo.png?ssl=1" alt="Relocator"></td>
+                                <td class="p-2">Relocator</td>
+                                <td class="p-2">1,500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Relocator" data-price="1500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/rp.png?ssl=1" alt="Royal Pass"></td>
+                                <td class="p-2">Royal Pass</td>
+                                <td class="p-2">100,000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Royal Pass" data-price="100000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/wb.png?ssl=1" alt="Winged Boots 25%"></td>
+                                <td class="p-2">Winged Boots 25%</td>
+                                <td class="p-2">500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Winged Boots 25%" data-price="500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/wb.png?ssl=1" alt="Winged Boots 50%"></td>
+                                <td class="p-2">Winged Boots 50%</td>
+                                <td class="p-2">900</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Winged Boots 50%" data-price="900" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/atkb.png?ssl=1" alt="Attack Boost 20% 12h"></td>
+                                <td class="p-2">Attack Boost 20% 12h</td>
+                                <td class="p-2">250</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Attack Boost 20% 12h" data-price="250" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/atkb.png?ssl=1" alt="Attack Boost 20% 24h"></td>
+                                <td class="p-2">Attack Boost 20% 24h</td>
+                                <td class="p-2">400</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Attack Boost 20% 24h" data-price="400" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/defb.png?ssl=1" alt="Army Defense Boost 20% 12h"></td>
+                                <td class="p-2">Army Defense Boost 20% 12h</td>
+                                <td class="p-2">250</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Army Defense Boost 20% 12h" data-price="250" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/defb.png?ssl=1" alt="Army Defense Boost 20% 24h"></td>
+                                <td class="p-2">Army Defense Boost 20% 24h</td>
+                                <td class="p-2">400</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Army Defense Boost 20% 24h" data-price="400" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/asize.png?ssl=1" alt="Army Size Boost 20% 4h"></td>
+                                <td class="p-2">Army Size Boost 20% 4h</td>
+                                <td class="p-2">2,400</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Army Size Boost 20% 4h" data-price="2400" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/asize.png?ssl=1" alt="Army Size Boost 50% 4h"></td>
+                                <td class="p-2">Army Size Boost 50% 4h</td>
+                                <td class="p-2">5,000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Army Size Boost 50% 4h" data-price="5000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/sh8h.png?ssl=1" alt="Shield 8 Hours"></td>
+                                <td class="p-2">Shield 8 Hours</td>
+                                <td class="p-2">500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Shield 8 Hours" data-price="500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/sh24h.png?ssl=1" alt="Shield 24 Hours"></td>
+                                <td class="p-2">Shield 24 Hours</td>
+                                <td class="p-2">1,500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Shield 24 Hours" data-price="1500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/sh3d.png?ssl=1" alt="Shield 3 Days"></td>
+                                <td class="p-2">Shield 3 Days</td>
+                                <td class="p-2">3,500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Shield 3 Days" data-price="3500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/sh7d.png?ssl=1" alt="Shield 7 Days"></td>
+                                <td class="p-2">Shield 7 Days</td>
+                                <td class="p-2">10,000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Shield 7 Days" data-price="10000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/sh24d.png?ssl=1" alt="Shield 14 Days"></td>
+                                <td class="p-2">Shield 14 Days</td>
+                                <td class="p-2">25000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Shield 14 Days" data-price="25000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/as24.png?ssl=1" alt="Anti-Scout 24h"></td>
+                                <td class="p-2">Anti-Scout 24h</td>
+                                <td class="p-2">600</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Anti-Scout 24h" data-price="600" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/as3d.png?ssl=1" alt="Anti-Scout 3d"></td>
+                                <td class="p-2">Anti-Scout 3d</td>
+                                <td class="p-2">1200</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Anti-Scout 3d" data-price="1200" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/as7d.png?ssl=1" alt="Anti-Scout 7d"></td>
+                                <td class="p-2">Anti-Scout 7d</td>
+                                <td class="p-2">3000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Anti-Scout 7d" data-price="3000" min="0" value="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tab Content - Boost -->
+                <div class="tab-content" id="boost">
+                    <table class="w-full table-auto border-collapse">
+                        <thead>
+                            <tr class="bg-gray-200">
+                                <th class="w-1/10 p-2"></th>
+                                <th class="w-7/10 p-2">Name</th>
+                                <th class="w-1/10 p-2">Price</th>
+                                <th class="w-1/10 p-2">Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/xp.png?ssl=1" alt="25% Player EXP Boost 24h"></td>
+                                <td class="p-2">25% Player EXP Boost 24h</td>
+                                <td class="p-2">2500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="25% Player EXP Boost 24h" data-price="2500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/tr.png?ssl=1" alt="Talent Reset"></td>
+                                <td class="p-2">Talent Reset</td>
+                                <td class="p-2">1000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Talent Reset" data-price="1000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/tt.png?ssl=1" alt="Talent Tome"></td>
+                                <td class="p-2">Talent Tome</td>
+                                <td class="p-2">1000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Talent Tome" data-price="1000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/qsa.png?ssl=1" alt="Quest Scroll (Admin)"></td>
+                                <td class="p-2">Quest Scroll (Admin)</td>
+                                <td class="p-2">800</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Quest Scroll (Admin)" data-price="800" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/qsg.png?ssl=1" alt="Quest Scroll (Guild)"></td>
+                                <td class="p-2">Quest Scroll (Guild)</td>
+                                <td class="p-2">1000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="Quest Scroll (Guild)" data-price="1000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/vp5.png?ssl=1" alt="500 VIP Points"></td>
+                                <td class="p-2">500 VIP Points</td>
+                                <td class="p-2">500</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="500 VIP Points" data-price="500" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/vp10.png?ssl=1" alt="1000 VIP Points"></td>
+                                <td class="p-2">1000 VIP Points</td>
+                                <td class="p-2">1000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="1000 VIP Points" data-price="1000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/vp50.png?ssl=1" alt="5000 VIP Points"></td>
+                                <td class="p-2">5000 VIP Points</td>
+                                <td class="p-2">5000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="5000 VIP Points" data-price="5000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/lt1.png?ssl=1" alt="10 Luck Tokens"></td>
+                                <td class="p-2">10 Luck Tokens</td>
+                                <td class="p-2">6600</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="10 Luck Tokens" data-price="6600" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/lt10.png?ssl=1" alt="100 Luck Tokens"></td>
+                                <td class="p-2">100 Luck Tokens</td>
+                                <td class="p-2">60000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="100 Luck Tokens" data-price="60000" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/hs1.png?ssl=1" alt="1000 Holy Stars"></td>
+                                <td class="p-2">1000 Holy Stars</td>
+                                <td class="p-2">2200</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="1000 Holy Stars" data-price="2200" min="0" value="0"></td>
+                            </tr>
+                            <tr class="border-b odd:bg-gray-100 hover:bg-gray-200">
+                                <td class="p-2"><img src="https://i0.wp.com/lordsgems.com/items/hs10.png?ssl=1" alt="10000 Holy Stars"></td>
+                                <td class="p-2">10000 Holy Stars</td>
+                                <td class="p-2">20000</td>
+                                <td class="p-2 text-center"><input type="number" class="qty-input w-full border border-gray-300 rounded text-center" data-name="10000 Holy Stars" data-price="20000" min="0" value="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-content hidden" id="resources">Resource items will be listed here.</div>
+                <div class="tab-content hidden" id="chests">Chest items will be listed here.</div>
+                <div class="tab-content hidden" id="buildings">Building items will be listed here.</div>
+                <div class="tab-content hidden" id="familiar">Familiar items will be listed here.</div>
+                <div class="tab-content hidden" id="monsterhunt">Monster Hunt items will be listed here.</div>
+            </div>
+
+            <!-- Selected Items List -->
+            <div class="mt-4">
+                <h2 class="text-lg font-bold">Wishlisted Items</h2>
+                <ul id="selected-items" class="list-disc list-inside text-gray-800"></ul>
+                <div class="mt-2 flex items-center">
+                    <span class="mr-2">Total Gems:</span>
+                    <span id="total-gems" class="font-bold">0</span>
+                </div>
+                <button id="whatsapp-btn" class="mt-2 px-4 py-2 bg-green-500 text-white rounded disabled:opacity-50 flex items-center" disabled>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
+                    Beli Gems
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        const tabs = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        /**
+         * Activate a tab and show its content
+         * @param {string} tabName - The name of the tab to activate
+         */
+        function activateTab(tabName) {
+            tabs.forEach(btn => btn.classList.remove('border-blue-500', 'text-blue-500'));
+            tabContents.forEach(content => content.classList.add('hidden'));
+
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('border-blue-500', 'text-blue-500');
+            document.getElementById(tabName).classList.remove('hidden');
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+        });
+
+        // Set default tab
+        activateTab('speedup');
+
+        // Handle quantity input and update selected items
+        const qtyInputs = document.querySelectorAll('.qty-input');
+        const selectedItems = document.getElementById('selected-items');
+        const totalGemsEl = document.getElementById('total-gems');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+
+        let selected = [];
+
+        qtyInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const name = input.dataset.name;
+                const price = parseInt(input.dataset.price);
+                const qty = parseInt(input.value) || 0;
+
+                const existing = selected.find(item => item.name === name);
+                if (existing) {
+                    if (qty > 0) {
+                        existing.qty = qty;
+                        existing.total = price * qty;
+                    } else {
+                        selected = selected.filter(item => item.name !== name);
+                    }
+                } else if (qty > 0) {
+                    selected.push({ name, price, qty, total: price * qty });
+                }
+
+                renderSelectedItems();
+            });
+        });
+
+        /**
+         * Updates the `selectedItems` element to display a list of selected items
+         * with their respective quantity, price, and total cost in gems.
+         * Also updates the `totalGemsEl` element to show the total number of gems
+         * and enables or disables the `whatsappBtn` based on whether any items
+         * are selected.
+         */
+        function renderSelectedItems() {
+            selectedItems.innerHTML = '';
+            let totalGems = 0;
+
+            selected.forEach(item => {
+                totalGems += item.total;
+                const li = document.createElement('li');
+                li.textContent = `${item.name} (${item.price} gems) x ${item.qty} = ${item.total.toLocaleString()} gems`;
+                selectedItems.appendChild(li);
+            });
+
+            totalGemsEl.textContent = totalGems.toLocaleString();
+            whatsappBtn.disabled = selected.length === 0;
+        }
+
+        whatsappBtn.addEventListener('click', () => {
+            let message = 'Halo, ini item yang ingin saya beli:\n\n';
+            selected.forEach(item => {
+                message += `> ${item.name} (${item.price}) x ${item.qty} = ${item.total.toLocaleString()}\n`;
+            });
+            message += `\nTotal Gems: *${totalGemsEl.textContent}*`;
+
+            const url = `https://wa.me/6282211219993?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
