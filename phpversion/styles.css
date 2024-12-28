@@ -1,0 +1,36 @@
+/* Floating summary styles */
+.floating-summary {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1f2937; /* Dark mode background */
+    color: #ffffff;
+    border-top: 1px solid #4b5563; /* Slight border for separation */
+    padding: 10px;
+    height: 200px; /* Adjust height as needed */
+    overflow-y: auto; /* Enables scrolling if content exceeds height */
+    z-index: 1000; /* Ensures it stays on top */
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-summary table {
+    width: 100%;
+}
+
+.floating-summary .summary-header {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.floating-summary .summary-total {
+    margin-top: auto; /* Pushes total to the bottom */
+    padding-top: 10px;
+    border-top: 1px solid #4b5563;
+}
+
+/* Ensure the floating summary does not cover important content */
+body {
+    padding-bottom: 220px; /* Extra padding to prevent content overlap */
+}
